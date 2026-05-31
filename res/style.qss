@@ -1,94 +1,365 @@
-/* ===================== 全局基础样式 ===================== */
+/* ==================== 全局基础 — 赛博科技暗色主题 ==================== */
 QWidget {
-    background-color: #1E1E2E; /* 深紫灰主背景 */
-    color: #E0E0FF; /* 浅紫白文字 */
-    font-family: "Microsoft YaHei", "Arial";
+    background-color: #0A0A14;
+    color: #E0F0FF;
+    font-family: "Microsoft YaHei", "Consolas", "Courier New", monospace;
     font-size: 12px;
 }
 
-/* ===================== 所有按钮（包括左侧导航+右侧控制） ===================== */
-QPushButton {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #3A3A60, stop:1 #2F2F50);
-    color: #FFFFFF;
-    border: 1px solid #5A5A88;
-    border-radius: 8px;
-    padding: 8px 16px;
-    min-height: 36px; /* 增大左侧导航按钮高度，适配界面 */
-    min-width: 100px; /* 左侧导航按钮固定宽度 */
-}
-QPushButton:hover {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #484878, stop:1 #383860);
-    border-color: #6A87E8;
-}
-QPushButton:pressed {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2F2F50, stop:1 #252540);
-    border-color: #4A67C8;
+/* ==================== 主窗口 ==================== */
+QMainWindow {
+    background-color: #0A0A14;
+    border: 1px solid #1A1A30;
 }
 
-/* ===================== QDoubleSpinBox（速度输入框） ===================== */
-QDoubleSpinBox {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2D2D44, stop:1 #252538);
-    color: #FFFFFF; /* 纯白数字，确保清晰 */
-    border: 1px solid #4A4A70;
-    border-radius: 6px;
+/* ==================== 按钮 — 霓虹发光风格 ==================== */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #141428, stop:1 #0E0E20);
+    color: #E0F0FF;
+    border: 1px solid #2A2A50;
+    border-radius: 4px;
+    padding: 8px 16px;
+    min-height: 36px;
+    min-width: 100px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1A1A38, stop:1 #10102A);
+    border: 1px solid #00E5FF;
+    color: #00E5FF;
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #0E0E20, stop:1 #080818);
+    border: 1px solid #00B8D4;
+    color: #00B8D4;
+}
+
+/* ==================== 导航按钮（左侧） ==================== */
+QPushButton#one_car, QPushButton#maney_car,
+QPushButton#Vehicle_Status, QPushButton#add_functional {
+    font-size: 13px;
+    text-align: left;
+    padding-left: 18px;
+    border-left: 3px solid #2A2A50;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid #15152A;
+    border-radius: 0px;
+    min-height: 44px;
+}
+
+QPushButton#one_car:hover, QPushButton#maney_car:hover,
+QPushButton#Vehicle_Status:hover, QPushButton#add_functional:hover {
+    border-left: 3px solid #00E5FF;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1A1A35, stop:1 #101025);
+    color: #00E5FF;
+}
+
+/* ==================== 运动控制按钮 ==================== */
+QPushButton#forword, QPushButton#forword_2 {
+    color: #00FF88;
+    border-color: #1A4A30;
+    font-size: 14px;
+}
+QPushButton#forword:hover, QPushButton#forword_2:hover {
+    border-color: #00FF88;
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+}
+
+QPushButton#back, QPushButton#back_2 {
+    color: #FF6B6B;
+    border-color: #4A2020;
+    font-size: 14px;
+}
+QPushButton#back:hover, QPushButton#back_2:hover {
+    border-color: #FF6B6B;
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+}
+
+QPushButton#left, QPushButton#left_2,
+QPushButton#right, QPushButton#right_2 {
+    color: #FFD93D;
+    border-color: #4A4020;
+    font-size: 14px;
+}
+QPushButton#left:hover, QPushButton#left_2:hover,
+QPushButton#right:hover, QPushButton#right_2:hover {
+    border-color: #FFD93D;
+    box-shadow: 0 0 8px rgba(255, 217, 61, 0.3);
+}
+
+QPushButton#stop, QPushButton#stop_2 {
+    color: #FF4444;
+    border-color: #4A1A1A;
+    font-size: 14px;
+}
+QPushButton#stop:hover, QPushButton#stop_2:hover {
+    border-color: #FF4444;
+    box-shadow: 0 0 8px rgba(255, 68, 68, 0.4);
+}
+
+/* ==================== 车队按钮 ==================== */
+QPushButton#open_close_lihang {
+    font-size: 14px;
+    font-weight: bold;
+    border-color: #2A4050;
+}
+QPushButton#open_close_lihang:hover {
+    border-color: #00E5FF;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+    color: #00E5FF;
+}
+
+/* ==================== 功能按钮 (1-9) — 网格按键 ==================== */
+QPushButton#function_1, QPushButton#function_2, QPushButton#function_3,
+QPushButton#function_4, QPushButton#function_5, QPushButton#function_6,
+QPushButton#function_7, QPushButton#function_8, QPushButton#function_9 {
+    border: 1px solid #1E3040;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #101828, stop:1 #0C1420);
+    color: #80D8FF;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+QPushButton#function_1:hover, QPushButton#function_2:hover,
+QPushButton#function_3:hover, QPushButton#function_4:hover,
+QPushButton#function_5:hover, QPushButton#function_6:hover,
+QPushButton#function_7:hover, QPushButton#function_8:hover,
+QPushButton#function_9:hover {
+    border: 1px solid #00E5FF;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #142838, stop:1 #0E2030);
+    color: #00E5FF;
+    box-shadow: 0 0 6px rgba(0, 229, 255, 0.2);
+}
+
+/* ==================== 输入框 / 数字调节框 ==================== */
+QDoubleSpinBox, QSpinBox {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #0E0E1E, stop:1 #080818);
+    color: #00E5FF;
+    border: 1px solid #1E2A3A;
+    border-radius: 3px;
     padding: 4px 8px;
     min-height: 28px;
     min-width: 60px;
-}
-QDoubleSpinBox:focus {
-    border-color: #6A87E8;
-    outline: none;
-}
-/* 箭头按钮（默认箭头+样式优化） */
-QDoubleSpinBox::up-button, QDoubleSpinBox::down-button {
-    background: #2D2D44;
-    border-left: 1px solid #4A4A70;
-    width: 22px;
-}
-QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover {
-    background: #383858;
+    font-family: "Consolas", "Courier New", monospace;
+    font-weight: bold;
 }
 
-/* ===================== QComboBox（当前车辆下拉框） ===================== */
+QDoubleSpinBox:focus, QSpinBox:focus {
+    border-color: #00E5FF;
+    outline: none;
+}
+
+QDoubleSpinBox::up-button, QDoubleSpinBox::down-button,
+QSpinBox::up-button, QSpinBox::down-button {
+    background: #0E0E1E;
+    border-left: 1px solid #1E2A3A;
+    width: 22px;
+}
+
+QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover,
+QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+    background: #1A2A3A;
+}
+
+/* ==================== 单行文本输入 ==================== */
+QLineEdit {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #0E0E1E, stop:1 #080818);
+    color: #E0F0FF;
+    border: 1px solid #1E2A3A;
+    border-radius: 3px;
+    padding: 4px 8px;
+    min-height: 26px;
+}
+
+QLineEdit:focus {
+    border-color: #00E5FF;
+    color: #00E5FF;
+}
+
+/* ==================== 多行文本编辑 ==================== */
+QTextEdit {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #0E0E1E, stop:1 #080818);
+    color: #E0F0FF;
+    border: 1px solid #1E2A3A;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+QTextEdit:focus {
+    border-color: #00E5FF;
+}
+
+/* ==================== 下拉框 ==================== */
 QComboBox {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2D2D44, stop:1 #252538);
-    color: #FFFFFF;
-    border: 1px solid #4A4A70;
-    border-radius: 6px;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #0E0E1E, stop:1 #080818);
+    color: #E0F0FF;
+    border: 1px solid #1E2A3A;
+    border-radius: 3px;
     padding: 4px 8px;
     min-height: 28px;
     min-width: 80px;
 }
-QComboBox::drop-down {
-    background: #2D2D44;
-    border-left: 1px solid #4A4A70;
-}
-QComboBox::drop-down:hover {
-    background: #383858;
-}
-QComboBox QAbstractItemView {
-    background-color: #252538;
-    color: #FFFFFF;
-    border: 1px solid #4A4A70;
-    border-radius: 6px;
-    selection-background-color: #484878;
+
+QComboBox:hover {
+    border-color: #00E5FF;
 }
 
-/* ===================== QLabel（文本标签） ===================== */
+QComboBox::drop-down {
+    background: #0E0E1E;
+    border-left: 1px solid #1E2A3A;
+    width: 24px;
+}
+
+QComboBox::drop-down:hover {
+    background: #1A2A3A;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #00E5FF;
+    margin-right: 6px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #0E0E1E;
+    color: #E0F0FF;
+    border: 1px solid #1E2A3A;
+    selection-background-color: #1A3040;
+    selection-color: #00E5FF;
+    outline: none;
+}
+
+/* ==================== 表格 ==================== */
+QTableWidget {
+    background-color: #0A0A18;
+    color: #E0F0FF;
+    border: 1px solid #1E2A3A;
+    gridline-color: #151530;
+    alternate-background-color: #0E0E20;
+    selection-background-color: #1A3040;
+    selection-color: #00E5FF;
+}
+
+QTableWidget::item {
+    padding: 6px 10px;
+    border-bottom: 1px solid #12122A;
+}
+
+QTableWidget::item:hover {
+    background-color: #141430;
+}
+
+QHeaderView::section {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #12122A, stop:1 #0C0C20);
+    color: #00E5FF;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 2px solid #00E5FF;
+    border-right: 1px solid #151530;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* ==================== 标签 ==================== */
 QLabel {
-    color: #E0E0FF;
+    color: #C0D0E0;
     font-size: 12px;
     padding: 4px 0;
 }
-/* 标题标签（如“多模块无人车协同平台”） */
+
 QLabel#title_label {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    color: #6A87E8;
+    color: #00E5FF;
     padding: 8px 0;
+    letter-spacing: 2px;
 }
 
-/* ===================== 主窗口（确保背景统一） ===================== */
-QMainWindow, QDialog {
-    background-color: #1E1E2E;
+/* ==================== 展开信息区域 ==================== */
+QLineEdit#function_name, QLineEdit#function_value {
+    color: #00E5FF;
+    font-size: 13px;
+    font-weight: bold;
+    border-color: #1A3040;
+}
+
+/* ==================== 标签页 (QStackedWidget) ==================== */
+QStackedWidget {
+    background-color: #0A0A14;
+}
+
+/* ==================== 滚动条 ==================== */
+QScrollBar:vertical {
+    background: #0A0A14;
+    width: 8px;
+    border: none;
+}
+
+QScrollBar::handle:vertical {
+    background: #1E2A3A;
+    border-radius: 4px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #00E5FF;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar:horizontal {
+    background: #0A0A14;
+    height: 8px;
+    border: none;
+}
+
+QScrollBar::handle:horizontal {
+    background: #1E2A3A;
+    border-radius: 4px;
+    min-width: 30px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #00E5FF;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+
+/* ==================== 提示框 ==================== */
+QToolTip {
+    background-color: #0E1420;
+    color: #00E5FF;
+    border: 1px solid #00E5FF;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-family: "Consolas", "Courier New", monospace;
+}
+
+/* ==================== 状态栏 ==================== */
+QStatusBar {
+    background-color: #0A0A14;
+    color: #6080A0;
+    border-top: 1px solid #1A1A30;
 }
