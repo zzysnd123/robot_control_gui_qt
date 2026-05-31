@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     // 加载 Qt 样式表
-    QFile styleFile(":/style/style.qss");
+    QFile styleFile(":/style/res/style.qss");
     if (styleFile.open(QFile::ReadOnly))
     {
         app.setStyleSheet(styleFile.readAll());
