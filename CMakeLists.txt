@@ -148,7 +148,7 @@ add_executable(car_control
   include/robot_control/page1_controller.h
   include/robot_control/page2_controller.h
   include/robot_control/page3_controller.h
-  ${RCC_SOURCES}
+  res.qrc
 )
 
 target_link_libraries(car_control
