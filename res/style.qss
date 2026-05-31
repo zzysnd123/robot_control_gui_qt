@@ -1,0 +1,94 @@
+/* ===================== 全局基础样式 ===================== */
+QWidget {
+    background-color: #1E1E2E; /* 深紫灰主背景 */
+    color: #E0E0FF; /* 浅紫白文字 */
+    font-family: "Microsoft YaHei", "Arial";
+    font-size: 12px;
+}
+
+/* ===================== 所有按钮（包括左侧导航+右侧控制） ===================== */
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #3A3A60, stop:1 #2F2F50);
+    color: #FFFFFF;
+    border: 1px solid #5A5A88;
+    border-radius: 8px;
+    padding: 8px 16px;
+    min-height: 36px; /* 增大左侧导航按钮高度，适配界面 */
+    min-width: 100px; /* 左侧导航按钮固定宽度 */
+}
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #484878, stop:1 #383860);
+    border-color: #6A87E8;
+}
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2F2F50, stop:1 #252540);
+    border-color: #4A67C8;
+}
+
+/* ===================== QDoubleSpinBox（速度输入框） ===================== */
+QDoubleSpinBox {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2D2D44, stop:1 #252538);
+    color: #FFFFFF; /* 纯白数字，确保清晰 */
+    border: 1px solid #4A4A70;
+    border-radius: 6px;
+    padding: 4px 8px;
+    min-height: 28px;
+    min-width: 60px;
+}
+QDoubleSpinBox:focus {
+    border-color: #6A87E8;
+    outline: none;
+}
+/* 箭头按钮（默认箭头+样式优化） */
+QDoubleSpinBox::up-button, QDoubleSpinBox::down-button {
+    background: #2D2D44;
+    border-left: 1px solid #4A4A70;
+    width: 22px;
+}
+QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover {
+    background: #383858;
+}
+
+/* ===================== QComboBox（当前车辆下拉框） ===================== */
+QComboBox {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2D2D44, stop:1 #252538);
+    color: #FFFFFF;
+    border: 1px solid #4A4A70;
+    border-radius: 6px;
+    padding: 4px 8px;
+    min-height: 28px;
+    min-width: 80px;
+}
+QComboBox::drop-down {
+    background: #2D2D44;
+    border-left: 1px solid #4A4A70;
+}
+QComboBox::drop-down:hover {
+    background: #383858;
+}
+QComboBox QAbstractItemView {
+    background-color: #252538;
+    color: #FFFFFF;
+    border: 1px solid #4A4A70;
+    border-radius: 6px;
+    selection-background-color: #484878;
+}
+
+/* ===================== QLabel（文本标签） ===================== */
+QLabel {
+    color: #E0E0FF;
+    font-size: 12px;
+    padding: 4px 0;
+}
+/* 标题标签（如“多模块无人车协同平台”） */
+QLabel#title_label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #6A87E8;
+    padding: 8px 0;
+}
+
+/* ===================== 主窗口（确保背景统一） ===================== */
+QMainWindow, QDialog {
+    background-color: #1E1E2E;
+}

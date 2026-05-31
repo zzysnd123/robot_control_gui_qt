@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+devel/
+*.o
+*.obj
+*.moc
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Qt
+*.pro.user
+*.pro.user.*
+
+# ROS
+logs/

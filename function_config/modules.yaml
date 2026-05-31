@@ -1,0 +1,14 @@
+modules:
+  - id: 0
+    name: 无模块
+    description: 无
+    functions:
+      无功能: 0
+  - id: 2
+    name: 叉车模块
+    description: 负责将卸载的货物放在指定的货架上
+    functions:
+      停止叉子移动: 7
+      叉子上升: 4
+      叉子下降: 5
+      回到最低位置: 6
